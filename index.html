@@ -2,19 +2,118 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    
+    <!-- <link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-5/css/reset.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-5/css/5-5.css"> -->
+
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <link rel="stylesheet" href="./css/sample.css"/>
+    
+   
+    
     <title>Notes App</title>
   </head>
   <body>
-    <button class="add" id="add">
-      <i class="fas fa-plus"></i> Add note
-    </button>
+    <div id="particles-js"></div>
+    <div id="wrapper">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.2.2/marked.min.js"></script>
+      <button class="add" id="add">
+        <i class="fas fa-plus"></i> Add note
+      </button>
+      
+      <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+      <script src="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-5/js/5-5.js"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.2.2/marked.min.js"></script>
+
+    </div>
+
+    <!-- <a href="https://vincentgarreau.com/particles.js/" target="_blank">https://vincentgarreau.com/particles.js/</a></p> -->
+    <!--/wrapper--></div>
+
     
     <script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 100,//この数値を変更すると雪の数が増減できる
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "image",//形状は画像を指定
+      "stroke": {
+        "width": 3,
+        "color": "#fff"
+      },
+      "image": {
+        "src": "http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-5/img/snow.png",//画像を指定
+        "width": 120,
+        "height": 120
+      }
+    },
+    "opacity": {
+      "value": 0.7,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 5,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 20,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": false,
+    },
+    "move": {
+      "enable": true,
+      "speed": 3,//この数値を小さくするとゆっくりな動きになる
+      "direction": "bottom",//下に向かって落ちる
+      "random": true,//動きはランダム
+      "straight": false,//動きをとどめない
+      "out_mode": "out",//画面の外に出るように描写
+      "bounce": false,//跳ね返りなし
+      "attract": {
+        "enable": true,
+        "rotateX": 300,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": false,
+      },
+      "onclick": {
+        "enable": false,
+      },
+      "resize": true
+    }
+  },
+  "retina_detect": true
+}); 
+
+
+
 // 要素を取得する
 const addBtn = document.getElementById('add')
 
